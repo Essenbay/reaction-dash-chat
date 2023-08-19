@@ -12,6 +12,7 @@ class MessageOptions {
     this.onLongPressAvatar,
     this.onLongPressMessage,
     this.onPressMessage,
+    this.onTapDown,
     this.onPressMention,
     this.currentUserContainerColor,
     this.currentUserTextColor,
@@ -71,6 +72,9 @@ class MessageOptions {
 
   /// Function to call when the user press on a message
   final Function(ChatMessage)? onPressMessage;
+
+  ///Function to call when the user press on a message, but it also returns details
+  final Function(TapDownDetails, ChatMessage)? onTapDown;
 
   /// Function to call when the user press on a message mention
   final Function(Mention)? onPressMention;
