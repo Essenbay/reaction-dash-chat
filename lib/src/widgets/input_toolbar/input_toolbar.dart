@@ -224,17 +224,15 @@ class InputToolbarState extends State<InputToolbar>
   }
 
   void _sendMessage() {
-    if (textController.text.isNotEmpty) {
-      final ChatMessage message = ChatMessage(
-        text: textController.text,
-        user: widget.currentUser,
-        createdAt: DateTime.now(),
-      );
-      widget.onSend(message);
-      textController.text = '';
-      if (widget.inputOptions.onTextChange != null) {
-        widget.inputOptions.onTextChange!('');
-      }
+    final ChatMessage message = ChatMessage(
+      text: textController.text,
+      user: widget.currentUser,
+      createdAt: DateTime.now(),
+    );
+    widget.onSend(message);
+    textController.text = '';
+    if (widget.inputOptions.onTextChange != null) {
+      widget.inputOptions.onTextChange!('');
     }
   }
 }
