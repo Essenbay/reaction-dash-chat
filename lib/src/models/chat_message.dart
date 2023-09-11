@@ -110,6 +110,8 @@ class MessageStatus {
         return MessageStatus.received;
       case 'pending':
         return MessageStatus.pending;
+      case 'error':
+        return MessageStatus.error;
       default:
         return MessageStatus.none;
     }
@@ -119,4 +121,5 @@ class MessageStatus {
   static const MessageStatus read = MessageStatus._internal('read');
   static const MessageStatus received = MessageStatus._internal('received');
   static const MessageStatus pending = MessageStatus._internal('pending');
+  static const MessageStatus error = MessageStatus._internal('error');
 }
