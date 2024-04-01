@@ -32,8 +32,8 @@ class MessageOptions {
     this.timeFormat,
     this.messageTimeBuilder,
     this.messageMediaBuilder,
-    this.onLongPressDownMessage,
-    this.onLongPressDownEndMessage,
+    this.onLongPressStartMessage,
+    this.onLongPressEndMessage,
   });
 
   /// Format of the time if [showTime] is true
@@ -73,10 +73,10 @@ class MessageOptions {
   final Function(ChatMessage)? onLongPressMessage;
 
   /// Function to call when the user long press down on a message ends
-  final Function(LongPressDownDetails, ChatMessage)? onLongPressDownMessage;
+  final Function(LongPressStartDetails, ChatMessage)? onLongPressStartMessage;
 
   /// Function to call when the user long press downs on a message
-  final Function(LongPressEndDetails, ChatMessage)? onLongPressDownEndMessage;
+  final Function(LongPressEndDetails, ChatMessage)? onLongPressEndMessage;
 
   /// Function to call when the user press on a message
   final Function(ChatMessage)? onPressMessage;
