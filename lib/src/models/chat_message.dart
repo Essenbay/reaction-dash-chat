@@ -91,6 +91,31 @@ class ChatMessage {
       'replyTo': replyTo?.toJson(),
     };
   }
+
+  /// Creates a copy of the current ChatMessage with specified properties replaced
+  ChatMessage copyWith({
+    String? text,
+    ChatUser? user,
+    List<ChatMedia>? medias,
+    List<QuickReply>? quickReplies,
+    Map<String, dynamic>? customProperties,
+    DateTime? createdAt,
+    List<Mention>? mentions,
+    MessageStatus? status,
+    ChatMessage? replyTo,
+  }) {
+    return ChatMessage(
+      text: text ?? this.text,
+      user: user ?? this.user,
+      medias: medias ?? this.medias,
+      quickReplies: quickReplies ?? this.quickReplies,
+      customProperties: customProperties ?? this.customProperties,
+      createdAt: createdAt ?? this.createdAt,
+      mentions: mentions ?? this.mentions,
+      status: status ?? this.status,
+      replyTo: replyTo ?? this.replyTo,
+    );
+  }
 }
 
 class MessageStatus {
